@@ -134,7 +134,10 @@ const audioPath = await (async form => {
 
   await getMediaData(audioFile)
     .then(data => {
-      let { title, artist, pUrl } = data;
+      let title = null, artist = null, pUrl = null;
+      if (data !== null) {
+        ({ title, artist, pUrl } = data);
+      }
       const elems = document.querySelector('.audio-title').children;
       if (title) { elems[0].innerText = title } else {
 
