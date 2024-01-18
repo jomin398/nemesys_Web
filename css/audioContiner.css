@@ -1,0 +1,133 @@
+audio {
+  width: 100%;
+}
+
+audio::-webkit-media-controls-enclosure {
+  border-radius: 0;
+  display: flex;
+  background-color: transparent;
+}
+
+.speedInfo-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.speedInfo-container .flex-row {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  min-width: 10em;
+  align-items: center;
+}
+
+.audioContiner {
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  width: inherit;
+  flex-direction: column-reverse;
+  gap: 5px;
+}
+
+.audioAndTitle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.trackNo {
+  background-color: #000;
+  color: #fff;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.8em;
+  padding: 0 5px;
+}
+
+.audioContiner .audio-title {
+  background-color: #000000aa;
+  color: #fff;
+  font-weight: bolder;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+  align-items: center;
+  text-overflow: ellipsis;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.artist {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jckContiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.audio-jck {
+  width: 160px;
+  height: 160px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.nojck {
+  border: 2px dashed red;
+}
+
+.statJS {
+  position: relative !important;
+}
+
+/* .statJS canvas {
+  width: 120px !important;
+  height: auto !important;
+} */
+
+.aSpeedDisp input#bpm {
+  border: none;
+  padding: 0;
+  height: 100%;
+  text-align: right;
+  font-size: 1.1em;
+}
+
+#MPPS {
+  font-size: 1.1em;
+}
+
+@media screen and (min-width:426px) {
+  .audioContiner {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .audio-jck {
+    max-width: 360px;
+    max-height: 360px;
+    width: 360px;
+    height: 360px;
+  }
+
+  /* .statJS canvas {
+    width: 160px !important;
+    height: auto !important;
+  } */
+
+  #MPPS {
+    margin-right: 0.8em;
+  }
+}

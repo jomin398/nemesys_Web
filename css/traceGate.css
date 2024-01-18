@@ -1,0 +1,81 @@
+.tranceGateWrap .indecater_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.tranceGateWrap .control {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tranceGateWrap .control input[type=range] {
+    flex: 0.9;
+}
+
+.tranceGateWrap .control span {
+    flex: 0.2;
+}
+
+.tranceGateWrap img {
+    filter: invert(1);
+}
+
+.tranceGateWrap .indecater_wrap input[type="checkbox"] {
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    outline: none;
+    appearance: none !important;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.21);
+    border-bottom-color: rgba(0, 0, 0, 0.34);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.34) inset,
+        0 2px 0 -1px rgba(0, 0, 0, 0.13),
+        0 3px 0 -1px rgba(0, 0, 0, 0.08),
+        0 3px 13px -1px rgba(0, 0, 0, 0.21);
+}
+
+.tranceGateWrap .indecater_wrap input[type="checkbox"]:checked {
+    border-color: rgba(0, 0, 0, 0.34) rgba(0, 0, 0, 0.21) rgba(0, 0, 0, 0.21);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.89), 0 1px rgba(0, 0, 0, 0.05) inset;
+    transform: scale(0.9);
+}
+
+.tranceGateWrap .indecater_wrap input[type="checkbox"]::before {
+    content: 'off';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    /* 원하는 글자 크기로 조절 */
+    color: darkred;
+    /* 글자 색상 설정 */
+    transition: opacity 0.3s, transform 0.3s;
+    /* 부드러운 전환 효과 */
+    opacity: 0.7;
+    /* 비활성화 상태일 때의 투명도 */
+}
+
+.tranceGateWrap .indecater_wrap input[type="checkbox"]:checked::before {
+    content: 'on';
+    color: limegreen;
+    opacity: 1;
+    /* 활성화 상태일 때의 투명도 */
+}
+
+/* input 요소가 체크되지 않았을 때의 텍스트 효과를 부드럽게 하기 위해 추가 */
+.tranceGateWrap .indecater_wrap input[type="checkbox"]:not(:checked)::before {
+    opacity: 0.7;
+    /* 비활성화 상태일 때의 투명도 */
+}

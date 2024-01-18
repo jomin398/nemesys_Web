@@ -1,0 +1,71 @@
+.viewport {
+    display: flex;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+}
+
+.renderWrap {
+    perspective: 20px;
+    width: var(--syswidth);
+    height: 100%;
+    overflow: hidden;
+}
+
+#waveform {
+    transform: rotateX(6deg) scale(0.4, 1) rotateZ(270deg) translateY(calc(var(--syswidth) - var(--syswidth)*0.34)) !important;
+    height: 100%;
+    margin-top: 18%;
+}
+
+.lineWrap {
+    height: 80%;
+    overflow: hidden;
+}
+
+.lineWrap {
+    position: absolute;
+    z-index: -1;
+    width: var(--syswidth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    perspective: 20px;
+}
+
+.lineDisp {
+    background-image: url(../icons/lines.svg);
+    display: block;
+    width: 700px !important;
+    transform: rotateX(20deg) scale(0.2, 2.5) translateY(30%) !important;
+    margin-top: calc(var(--syswidth) + 10px);
+    height: var(--sysheight);
+}
+
+@media screen and (min-width:426px) {
+    .renderWrap {
+        perspective: 60px;
+    }
+
+    .viewport {
+        width: var(--syswidth);
+        height: var(--sysheight);
+    }
+
+    #waveform {
+        transform: rotateX(18deg) scale(0.2, 1) rotateZ(270deg) translateY(calc(var(--sysheight)*0.31)) !important;
+        height: var(--sysheight);
+        margin-top: calc(var(--sysheight) * -.01);
+    }
+
+    .lineWrap {
+        top: 0;
+        perspective: 20px;
+    }
+
+    .lineDisp {
+        transform: rotateX(30deg) scale(0.3, 7) translateY(30%) !important;
+        margin-top: 100%;
+    }
+}

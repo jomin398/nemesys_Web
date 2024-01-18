@@ -1,0 +1,43 @@
+.bpmCountWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bpmCountWrap .module {
+    display: flex;
+    font-size: 2em;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.bpmCountWrap .module button {
+    font-size: inherit;
+}
+
+.bpmCountWrap .tapTempo {
+    color: white;
+    flex: 0.8;
+    background: #2f2f2f;
+    transition: background 0.2s;
+}
+
+.bpmCountWrap .dispBPM {
+    text-align: center;
+}
+
+.bpmCountWrap .reset {
+    color: white;
+    background: #dc4642;
+    box-shadow: 7px 7px 50px #d23c38 inset;
+}
+
+.bpmCountWrap .reset:active,
+.bpmCountWrap .reset.active {
+    background: #bb3a36;
+}
+
+.bpmCountWrap img {
+    filter: invert(1);
+}

@@ -1,0 +1,139 @@
+.controler {
+    border: 1px solid white;
+    background-color: dimgray;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    width: var(--syswidth);
+    height: calc(var(--syswidth) * 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.controller_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controller_mid,
+.controller_bott {
+    display: flex;
+    justify-content: space-around;
+    gap: 1.7em;
+    justify-content: center;
+}
+
+.controller_bott {
+    gap: 2em;
+    margin-bottom: 10px;
+}
+
+.knobBody {
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+
+.chip,
+.fx,
+.st {
+    text-align: center;
+}
+
+._button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+._button:active,
+._button.active {
+    position: relative;
+    transform: scale(0.9);
+}
+
+.chip {
+    width: 80px;
+    height: 80px;
+    background-color: lightgray;
+    box-shadow: inset 0px 0em 0px 7px #808080;
+}
+
+.chip:active,
+.chip.active {
+    box-shadow: inset 0px 0em 0px 9px #000;
+}
+
+.fx {
+    width: 100px;
+    height: 50px;
+    box-shadow: inset 0px 0em 0px 7px #b45866;
+}
+
+.fx:active,
+.fx.active {
+    box-shadow: inset 0px 0em 0px 9px #000;
+    background-color: #b45866;
+}
+
+.st {
+    width: 60px;
+    height: 60px;
+    background-color: #7483c1;
+    box-shadow: inset 0px 0em 0px 7px #808080;
+}
+
+.st:active,
+.st.active {
+    box-shadow: inset 0px 0em 0px 9px #000;
+    background-color: #5375ff;
+}
+
+.knobLabel_Left,
+.knobLabel_Right {
+    position: absolute;
+    color: #fff;
+    font-weight: bolder;
+    top:30px;
+    left:35px;
+}
+
+.controller_top div:not(.st._button) {
+    position: relative;
+}
+.controler span{
+  user-select: none !important;
+}
+@media screen and (min-width:426px) {
+    .controler {
+        bottom: 0;
+        width: 500px;
+        height: 280px;
+    }
+
+    .knobBody {
+        width: 110px;
+        height: 110px;
+    }
+    .knobLabel_Left,
+    .knobLabel_Right{
+        top: 40px;
+        left: 50px;
+        font-size: 20px;
+    }
+    .chip {
+        width: 80px;
+        height: 80px;
+    }
+
+    .fx {
+        width: 100px;
+        height: 50px;
+    }
+
+    .st {
+        width: 60px;
+        height: 60px;
+    }
+}

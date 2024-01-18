@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nemesys Web</title>
+  <meta name="author" content="jomin398">
+  <meta name="description"
+    content="We have implemented the Nemesis of SoundVoltex (sdvx) so that you can enjoy it on the web.">
+  <meta name="keywords" content="nemesis, SoundVoltex, sdvx">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jomin398.github.io/nemesys_Web">
+  <meta property="og:title" content="Nemesys Web">
+  <meta property="og:description" content="implemented the Nemesis of SoundVoltex (sdvx)">
+  <meta property="og:site_name" content="Nemesys Web">
+  <meta property="og:locale" content="en_US">
+  <link rel="stylesheet" href="./css/bootStrap.css">
+  <link rel="stylesheet" href="./css/audioContiner.css">
+  <link rel="stylesheet" href="./css/viewport.css">
+  <link rel="stylesheet" href="./css/controler.css">
+  <link rel="stylesheet" href="./css/sysConfigs.css">
+  <link rel="stylesheet" href="./css/metronome.css">
+  <link rel="stylesheet" href="./css/bpmCounter.css">
+  <link rel="stylesheet" href="./css/traceGate.css">
+  <link rel="stylesheet" href="./css/gitRibbon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsmediatags@3.9.7/dist/jsmediatags.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-knob@1.2.11/dist/jquery.knob.min.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "statsjs": "https://cdn.jsdelivr.net/npm/stats.js@0.17.0/+esm",
+        "wavesurfer": "https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js",
+        "wavesurferStats": "./src/lib/wavesurferStats.js"
+      }
+    }
+  </script>
+
+  <script type="module" src="./src/main.js"></script>
+</head>
+
+<body>
+  <form class="init">
+    <p class="animate__animated animate__fadeIn animate__slow">Since this page was created for research purposes, each
+      asset (referred to as a resource) used is with the original author.
+      Therefore, agreeing to this consent is considered a reminder of this point.
+    </p>
+    <br>
+    <p class="animate__animated animate__fadeIn animate__slow animate__delay-1s">Full screen for the
+      best user experience.
+    </p>
+    <select name="songs" id="songs">
+      <option
+        value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/norahato/%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%B0%E3%83%8F%E3%83%BC%E3%83%88.mp3">
+        Crying Heart</option>
+      <option
+        value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/HappyDays%E2%98%86/HappyDays%E2%98%86.mp3">
+        HappyDays☆</option>
+      <option value="./songs/愛のしるし.mp3">愛のしるし</option>
+      <option
+        value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/%E7%A7%81%E3%81%AFNo%201%EF%BC%81/%E7%A7%81%E3%81%AFNo%201%EF%BC%81.mp3">
+        私はNo 1!</option>
+      <option value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/Ray/Ray.mp3">
+        Ray</option>
+      <option
+        value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%20%5B%E6%8E%A8%E3%81%97%E3%81%AE%E5%AD%90%5D/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB.mp3">
+        アイドル</option>
+      <option value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/Hand%20in%20Hand/Hand%20in%20Hand.mp3">
+        Hand in Hand</option>
+      <option value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/Dear/Dear.mp3">Dear</option>
+      <option value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/Azurlane%20Anime/Longing%20for.mp3">
+        Longing for</option>
+      <option
+        value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/Azurlane%20Anime/%E3%81%BE%E3%81%B2%E3%82%8B%E3%81%84%E3%82%8D%E3%82%B7%E3%82%A8%E3%82%B9%E3%82%BF.mp3">
+        まひるいろシエスタ</option>
+      <option
+        value="https://cdn.jsdelivr.net/gh/jomin398/mySongDB@master/audios/Ha%20lle%20lu%20jah/Ha%EF%BD%A5lle%EF%BD%A5lu%EF%BD%A5jah.mp3">
+        Ha lle lu jah</option>
+      <option value="url">url Input</option>
+      <option value="null" selected>File upload</option>
+    </select>
+    <input type="text" name="url" id="url">
+    <input type="file" name="upload" id="upload">
+    <button type="submit">Agree</button>
+  </form>
+
+  <main>
+    <div class="audioContiner">
+      <div class="jckContiner">
+        <div class="audio-jck nojck"></div>
+      </div>
+      <div class="audioAndTitle">
+        <span class="trackNo">Track 0</span>
+        <div class="audio-title">
+          <span class="title">UnTitled</span>
+          <span class="artist">Unknown</span>
+        </div>
+        <audio id="sfx_a" src="./sfxs/tick.mp3" hidden></audio>
+        <audio id="sfx_b" src="./sfxs/tick2.mp3" hidden></audio>
+        <audio id="sfx_c" src="./sfxs/knob_default.mp3" hidden></audio>
+        <audio id="sfx_d" src="./sfxs/knob_swing.mp3" hidden></audio>
+        <audio id="bgm" controls></audio>
+        <div class="speedInfo-container">
+          <div class="fpsdisp"></div>
+          <div class="aSpeedDisp">
+            <div class="flex-row">
+              <div>BPM</div>
+              <div><input type="number" name="bpm" id="bpm" min="1" max="256"></div>
+            </div>
+            <div class="flex-row">
+              <div>MPPS</div>
+              <div id="MPPS">-1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="viewport">
+      <div class="renderWrap">
+        <div id="waveform">
+          <!-- the waveform will be rendered here -->
+        </div>
+      </div>
+      <div class="lineWrap">
+        <span class="lineDisp"></span>
+      </div>
+    </div>
+    <div class="controler" translate="no">
+      <div class="controller_top">
+        <div class="knobBody knobLeft">
+        </div>
+        <div class="st _button" id="ENTER"><span>ST</span></div>
+        <div class="knobBody knobRight">
+        </div>
+      </div>
+      <div class="controller_mid">
+        <div id="S" class="chip _button"><span>S</span></div>
+        <div id="D" class="chip _button"><span>D</span></div>
+        <div id="K" class="chip _button"><span>K</span></div>
+        <div id="L" class="chip _button"><span>L</span></div>
+      </div>
+      <div class="controller_bott">
+        <div class="fx _button" id="C"><span>C</span></div>
+        <div class="fx _button" id="M"><span>M</span></div>
+      </div>
+    </div>
+  </main>
+  <section class="sysConfigs hide">
+    <div class="tool buttonSetting">
+      <div class="nameplate">
+        <span>Settings</span>
+      </div>
+      <label for="btnSoption" translate="no">S</label>
+      <select name="btnSoption" id="btnSoption">
+        <optgroup label="tap sfxs">
+          <option value="tap_sfx1" selected>SFX 1</option>
+          <option value="tap_sfx2">SFX 2</option>
+          <option value="tap_sfx3">SFX 3</option>
+          <option value="tap_sfx4">SFX 4</option>
+        </optgroup>
+      </select>
+      <label for="btnDoption" translate="no">D</label>
+      <select name="btnDoption" id="btnDoption">
+        <optgroup label="tap sfxs">
+          <option value="tap_sfx1" selected>SFX 1</option>
+          <option value="tap_sfx2">SFX 2</option>
+          <option value="tap_sfx3">SFX 3</option>
+          <option value="tap_sfx4">SFX 4</option>
+        </optgroup>
+      </select>
+      <label for="btnKoption" translate="no">K</label>
+      <select name="btnKoption" id="btnKoption">
+        <optgroup label="tap sfxs">
+          <option value="tap_sfx1" selected>SFX 1</option>
+          <option value="tap_sfx2">SFX 2</option>
+          <option value="tap_sfx3">SFX 3</option>
+          <option value="tap_sfx4">SFX 4</option>
+        </optgroup>
+      </select>
+      <label for="btnLoption" translate="no">L</label>
+      <select name="btnLoption" id="btnLoption">
+        <optgroup label="tap sfxs">
+          <option value="tap_sfx1" selected>SFX 1</option>
+          <option value="tap_sfx2">SFX 2</option>
+          <option value="tap_sfx3">SFX 3</option>
+          <option value="tap_sfx4">SFX 4</option>
+        </optgroup>
+      </select>
+      <label for="btnFXLoption" translate="no">FXL</label>
+      <select name="btnFXLoption" id="btnFXLoption">
+        <optgroup label="tap sfxs">
+          <option value="tap_sfx1">SFX 1</option>
+          <option value="tap_sfx2">SFX 2</option>
+          <option value="tap_sfx3">SFX 3</option>
+          <option value="tap_sfx4">SFX 4</option>
+        </optgroup>
+        <optgroup label="TranceGate">
+          <option value="tGate_2">tGate 2</option>
+          <option value="tGate_4" selected>tGate 4</option>
+          <option value="tGate_8">tGate 8</option>
+          <option value="tGate_16">tGate 16</option>
+        </optgroup>
+        <optgroup label="Rettiger Gate">
+          <option value="rGate_2" disabled>Re 2</option>
+          <option value="rGate_4" disabled>Re 4</option>
+          <option value="rGate_8" disabled>Re 8</option>
+          <option value="rGate_16" disabled>Re 16</option>
+        </optgroup>
+      </select>
+      <label for="btnFXRoption" translate="no">FXR</label>
+      <select name="btnFXRoption" id="btnFXRoption">
+        <optgroup label="tap sfxs">
+          <option value="tap_sfx1">SFX 1</option>
+          <option value="tap_sfx2">SFX 2</option>
+          <option value="tap_sfx3">SFX 3</option>
+          <option value="tap_sfx4">SFX 4</option>
+        </optgroup>
+        <optgroup label="TranceGate" translate="no">
+          <option value="tGate_2">tGate 2</option>
+          <option value="tGate_4">tGate 4</option>
+          <option value="tGate_8" selected>tGate 8</option>
+          <option value="tGate_16">tGate 16</option>
+        </optgroup>
+        <optgroup label="Rettiger Gate" translate="no">
+          <option value="rGate_2" disabled>Re 2</option>
+          <option value="rGate_4" disabled>Re 4</option>
+          <option value="rGate_8" disabled>Re 8</option>
+          <option value="rGate_16" disabled>Re 16</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="tool metronomeWrap">
+      <div class="nameplate">
+        <img src="./icons/metronome.svg" width="30" height="30" alt="metronome"
+          style="margin:0 5px;"><span>Metronome</span>
+      </div>
+      <div class="module" translate="no">
+        <div class="counter"></div>
+        <i class="fa fa-cog options-btn"></i>
+        <div class="controls">
+          <label>
+            Beat: <input type="text" value="4" class="ts-top" /></label>
+          <button class="play-btn">Play</button>
+        </div>
+        <div class="options hide">
+          <i class="fa fa-caret-down up"></i>
+          <label>Off Beat Pitch: <input type="range" min="0" max="500" value="200" class="beat-range" /></label>
+          <label>Accent Pitch: <input type="range" min="0" max="500" value="380" class="accent-range" /></label>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="tool bpmCountWrap" translate="no">
+      <div class="nameplate">
+        <img src="./icons/bpmtap.svg" width="40" height="40" alt=""><span>bpmTap</span>
+      </div>
+      <div class="module">
+        <div class="dispBPM">-</div>
+        <button class="button tapTempo">TAP</button>
+        <button class="button reset">RESET</button>
+      </div>
+    </div>
+    <div class="tool tranceGateWrap" translate="no">
+      <div class="nameplate">
+        <img src="./icons/split.svg" width="40" height="40" alt=""><span>Trance Gate</span>
+      </div>
+      <div class="module">
+        <div class="indecater_wrap">
+          <input type="checkbox" name="tgatePw" id="tgatePw">
+          <canvas class="indecater" width="270" height="270"></canvas>
+        </div>
+
+        <span>Mix</span>
+        <div class="control">
+          <input type="range" name="tmix" id="tmix" min="0" max="1" step="0.01" value="1">
+          <span id="tmixVel">100%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <span class="gitRibbon">
+    <a href="https://github.com/jomin398/nemesys_Web">
+      Fork me On GitHub
+    </a>
+  </span>
+</body>
+
+</html>
