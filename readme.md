@@ -1,5 +1,5 @@
 # nemesys Web
-We have implemented the Nemesis of SoundVoltex (sdvx) so that you can enjoy it on the web.
+implemented the Nemesis of SoundVoltex (sdvx) so that you can enjoy it on the web.
 
 # implemented Audio Effects
 - [v] TranceGate
